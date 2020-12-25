@@ -16,7 +16,7 @@ export default class Ball {
 
   reset() {
     this.position = { x: 10, y: 400 };
-    this.speed = { x: 2, y: -2 };
+    this.speed = { x: this.game.gameSpeed, y: -this.game.gameSpeed };
   }
 
   draw(ctx) {

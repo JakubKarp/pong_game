@@ -25,6 +25,7 @@ export default class Game {
     this.lives = 3;
     this.levels = [level1, level2];
     this.currentLevel = 0;
+    this.gameSpeed = 2;
     new InputHandler(this.paddle, this);
   }
 
@@ -54,7 +55,8 @@ export default class Game {
 
     if (this.bricks.length === 0) {
       this.currentLevel++;
-      this.gamestate = GAMESTATE.NEWLEVEL
+      this.gameSpeed += 2;
+      this.gamestate = GAMESTATE.NEWLEVEL;
       this.start();
     }
 
