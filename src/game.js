@@ -70,6 +70,12 @@ export default class Game {
   draw(ctx) {
     [...this.gameObjects, ...this.bricks].forEach((object) => object.draw(ctx));
 
+    ctx.font = "20px Arial";
+    // ctx.fillStyle = "black";
+    ctx.textAlign = "center";
+    ctx.fillText(`lives: ${this.lives}`, 40, 40);
+    ctx.fillText(`level: ${this.currentLevel + 1}`, 40, 60);
+
     if (this.gamestate === GAMESTATE.PAUSED) {
       ctx.rect(0, 0, this.gameWidth, this.gameHeight);
       ctx.fillStyle = "rgba(0,0,0,0.5)";
